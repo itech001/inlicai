@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Author: {{ author }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<h4 class="well well-small">Author: {{ author }}</h4>
+
+{{ super() }}
+{% endblock content %}

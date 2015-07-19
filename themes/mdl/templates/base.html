@@ -1,0 +1,126 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/material.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/main.css">
+<link href="{{ SITEURL }}/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+<script src="{{ SITEURL }}/theme/tipuesearch/tipuesearch_set.js"></script>
+<script src="{{ SITEURL }}/theme/tipuesearch/tipuesearch.min.js"></script>
+  {% if FEED_RSS %}<link href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate" type="application/atom+xml" title="{{ SITENAME }} RSS" />
+  {% endif %}
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+          'mode': 'json',
+          'contentLocation': 'tipuesearch_content.json'
+     });
+});
+</script>
+  {% block head %}{% endblock head %}
+  </head>
+  <body class=" mdl-base">
+    <div class="docs-layout mdl-layout mdl-js-layout">
+      <header class="docs-layout-header mdl-layout__header ">
+        <div class="mdl-layout__header-row">
+          <h2>{{ SITENAME }}</h2>
+          &nbsp;&nbsp;&nbsp;{% if SITESUBTITLE %}<h5>{{ SITESUBTITLE }}</h5>{% endif %}
+        </div>
+        <div class="mdl-layout__header-row">
+        <div class="docs-navigation__container">
+        <nav class="docs-navigation mdl-navigation">
+
+          <a href="{{ SITEURL }}/index.html" class="mdl-navigation__link" {% if page_name == 'index' %} class="mdl-navigation__link"{% endif %}>首页</a>
+          {% if DISPLAY_CATEGORIES_ON_MENU != False %}
+          {% for cat, null in categories %}
+          <a href="{{ SITEURL }}/{{ cat.url }}"  class="mdl-navigation__link" {% if cat == category %}class="mdl-navigation__link"{% endif %}>{{ cat }}</a>
+          {% endfor %}
+          {% endif %}
+
+          {% if DISPLAY_PAGES_ON_MENU != False %}
+            {% for page_num in range(1, PAGES|length + 1) %} {# TODO: improve wasteful inner loop #}
+              {% for page_iter in PAGES if page_iter.order and page_iter.order|int > 0 %}
+                {% if page_iter.order|int == page_num %}
+                  {% if page_iter == page %}{% endif %}<a href="{{ SITEURL }}/{{ page_iter.url }}" class="mdl-navigation__link">{{ page_iter.title }}</a>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+
+            {% for page_iter in PAGES if not page_iter.order %}
+              {% if page_iter == page %}{% endif %}<a href="{{ SITEURL }}/{{ page_iter.url }}" class="mdl-navigation__link">{{ page_iter.title }}</a>
+            {% endfor %}
+          {% endif %}
+        </nav>
+      </div>
+    </div>
+      </header>
+      <main class="mdl-layout__content">
+         <div class="mdl-grid">
+           <div class="mdl-cell mdl-cell--9-col">
+{% block content %}
+{% endblock content %}
+           </div>
+           <div class="mdl-cell mdl-cell--3-col">
+             <h5>分类</h5>
+             <ul class="nav nav-pills nav-stacked">
+             {% for cat, null in categories %}
+               <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+             {% endfor %}
+             </ul>
+
+             <h5>标签</h5>
+             <ul class="tagcloud">
+                 {% for tag in tag_cloud %}
+                     <li class="tag-{{ tag.1 }}"><a href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a></li>
+                 {% endfor %}
+             </ul>
+           </div>
+</div>
+        <footer class="mdl-mega-footer">
+        </footer>
+      </main>
+    </div>
+    <script src="{{ SITEURL }}/theme//material.js"></script>
+    <script src="{{ SITEURL }}/theme//main.js"></script>
+  </body>
+</html>

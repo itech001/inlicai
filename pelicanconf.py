@@ -4,10 +4,10 @@ from __future__ import unicode_literals
 
 AUTHOR = u'itech001'
 AUTHORS = u'itech001'
-SITENAME = u'ciandcd'
+SITENAME = u'inlicai.com'
 SITEURL = 'http://www.inlicai.com'
 #SITESUBTITLE = 'continuous integration and continuous delivery'
-SITESUBTITLE = '理财网'
+SITESUBTITLE = '小白理财资料大集合'
 
 PATH = 'content'
 TIMEZONE = 'Asia/Shanghai'
@@ -34,7 +34,7 @@ EXTRA_PATH_METADATA = {
 
 #theme
 #https://github.com/getpelican/pelican-themes/tree/master/gum
-THEME = "themes/bootstrap-spacelab"
+THEME = "themes/mdl"
 
 #disqus
 DISQUS_SITENAME = ''
