@@ -44,18 +44,14 @@
 
     <link rel="stylesheet" href="{{ SITEURL }}/theme/material.css">
     <link rel="stylesheet" href="{{ SITEURL }}/theme/main.css">
+        <script src="{{ SITEURL }}/theme/js/jquery.js"></script>
 <link href="{{ SITEURL }}/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
 <script src="{{ SITEURL }}/theme/tipuesearch/tipuesearch_set.js"></script>
 <script src="{{ SITEURL }}/theme/tipuesearch/tipuesearch.min.js"></script>
   {% if FEED_RSS %}<link href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate" type="application/atom+xml" title="{{ SITENAME }} RSS" />
   {% endif %}
 <script>
-$(document).ready(function() {
-     $('#tipue_search_input').tipuesearch({
-          'mode': 'json',
-          'contentLocation': 'tipuesearch_content.json'
-     });
-});
+
 </script>
   {% block head %}{% endblock head %}
   </head>
@@ -120,7 +116,7 @@ $(document).ready(function() {
         </footer>
       </main>
     </div>
+
     <script src="{{ SITEURL }}/theme//material.js"></script>
-    <script src="{{ SITEURL }}/theme//main.js"></script>
   </body>
 </html>
