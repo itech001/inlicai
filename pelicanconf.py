@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'itech001'
 AUTHORS = u'itech001'
-SITENAME = u'inlicai.com'
+SITENAME = u'www.inlicai.com'
 SITEURL = 'http://www.inlicai.com'
 #SITESUBTITLE = 'continuous integration and continuous delivery'
 SITESUBTITLE = '小白理财资料大集合'
@@ -17,7 +17,10 @@ USE_FOLDER_AS_CATEGORY = True
 DEFAULT_DATE = 'fs'
 DEFAULT_CATEGORY = 'misc'
 DISPLAY_PAGES_ON_MENU = True
-DISPLAY_CATEGORIES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_MENUITEMS_ON_MENU = False
+DISPLAY_LINKS_ON_MENU = False
+DISPLAY_SOCIAL_ON_MENU = False
 SUMMARY_MAX_LENGTH = 0
 TYPOGRIFY = False
 CACHE_CONTENT = True
@@ -34,7 +37,7 @@ EXTRA_PATH_METADATA = {
 
 #theme
 #https://github.com/getpelican/pelican-themes/tree/master/gum
-THEME = "themes/mdl"
+THEME = "themes/materialize"
 
 #disqus
 DISQUS_SITENAME = ''
