@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>投稿 - www.inlicai.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="../theme/materialize/css/materialize.css" rel="stylesheet" type="text/css"/>
+  <link href="../theme/css/main.css" rel="stylesheet" type="text/css"/>
+  <link href="../theme/css/pygment.css" rel="stylesheet" type="text/css"/>
+<script src="../theme/js/jquery.js"></script>
+<script src="../theme/materialize/js/materialize.js"></script>
+
+<link href="../feeds/rss.xml" rel="alternate" type="application/atom+xml" title="www.inlicai.com RSS" />
+<script>
+$(document).ready(function() {
+     $('#sidebar .section').pushpin({ top: $('#sidebar .section').offset().top });
+});
+</script>
+
+
+  <!--[if lt IE 9]>
+    <script src="https://raw.github.com/aFarkas/html5shiv/master/dist/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<!--
+bootstrap-itech - a Pelican theme using Bootstrap
+-->
+<body>
+
+<!-- Header -->
+<header>
+ <div class="">
+    <nav>
+      <div class="nav-wrapper container">
+        <a href="../index.html" class="brand-logo">www.inlicai.com</a>
+         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+<!--
+        <form role="search" action="../search.html onsubmit="return validateForm(this.elements['q'].value);">
+        <div class="input-field" >
+          <input id="search" type="search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+-->
+        <ul class="right hide-on-med-and-down">
+  <li><a href="../index.html">首页</a></li>
+
+  
+      <li class="active"><a href="../pages/tou-gao.html">投稿</a></li>
+      <li ><a href="../pages/lian-jie.html">链接</a></li>
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /Header -->
+
+<!-- Body -->
+<div id="body">
+<div class="container">
+
+<!-- Nav bar -->
+<!-- /Nav bar -->
+
+<!-- Main block -->
+<div class="row">
+
+<!-- Content -->
+<div class="col s9">
+
+<h2>关于inlicai.com</h2>
+<p>理财网</p>
+<h2>投稿</h2>
+<ol>
+<li>fork本网站源码.</li>
+<li>将你的文章放到content/category/下对应的子目录中, 如果是原创文章可以放到content/category/原创.　　</li>
+<li>文章的格式可以为markdown，restructuredtext或html。  </li>
+<li>提交你的文章。  </li>
+<li>你也可以通过QQ群来提供相关的rss feed。  </li>
+</ol>
+<p>.rst格式  </p>
+<div class="highlight"><pre>My super title
+\##############
+
+:date: 2010-10-03 10:20
+:modified: 2010-10-04 18:40
+:tags: thats, awesome
+:category: yeah
+:slug: my-super-post
+:authors: Alexis Metaireau, Conan Doyle
+:summary: Short version for index and feeds
+
+This is the content of my super blog post.
+</pre></div>
+
+
+<p>.md格式  </p>
+<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">My</span> <span class="kd">super</span> <span class="n">title</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">03</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span>
+<span class="n">Modified</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">19</span><span class="o">:</span><span class="mi">30</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">Python</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">pelican</span><span class="o">,</span> <span class="n">publishing</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">my</span><span class="o">-</span><span class="kd">super</span><span class="o">-</span><span class="n">post</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">Alexis</span> <span class="n">Metaireau</span><span class="o">,</span> <span class="n">Conan</span> <span class="n">Doyle</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="n">Short</span> <span class="n">version</span> <span class="k">for</span> <span class="n">index</span> <span class="n">and</span> <span class="n">feeds</span>
+
+<span class="n">This</span> <span class="k">is</span> <span class="n">the</span> <span class="n">content</span> <span class="n">of</span> <span class="n">my</span> <span class="kd">super</span> <span class="n">blog</span> <span class="n">post</span><span class="o">.</span>
+</pre></div>
+
+
+<p>.html格式  </p>
+<div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>My super title<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;tags&quot;</span> <span class="na">content=</span><span class="s">&quot;thats, awesome&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;date&quot;</span> <span class="na">content=</span><span class="s">&quot;2012-07-09 22:28&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;modified&quot;</span> <span class="na">content=</span><span class="s">&quot;2012-07-10 20:14&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;category&quot;</span> <span class="na">content=</span><span class="s">&quot;yeah&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;authors&quot;</span> <span class="na">content=</span><span class="s">&quot;Alexis Métaireau, Conan Doyle&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;summary&quot;</span> <span class="na">content=</span><span class="s">&quot;Short version for index and feeds&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        This is the content of my super blog post.
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<h2>联系</h2>
+<p>email: itech001@126.com<br />
+QQ群：172758282，437085002  　　</p>
+<h2>感谢</h2>
+<p>https://www.python.org/<br />
+https://pythonhosted.org/feedparser/index.html<br />
+https://github.com/codelucas/newspaper<br />
+https://github.com/getpelican/pelican<br />
+http://twitter.github.com/bootstrap  </p>
+<h2>开发环境</h2>
+<ol>
+<li>prod环境请参考.travis.yml.  </li>
+<li>本地测试环境　　
+<em>make clean &amp;&amp; make html
+</em>make devserver, or 'cd output &amp;&amp; python -m http.server 8000'.</li>
+</ol>
+<h2>自动deploy</h2>
+<ol>
+<li>所有的修改会被trivs CI自动build和deploy到github pages.  </li>
+</ol>
+<h2>问题</h2>
+<ol>
+<li>file issues.  </li>
+<li>pull requests.  </li>
+</ol>
+<h3>License</h3>
+<ol>
+<li>MIT License for this source code  </li>
+<li><a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> for the content of www.ciandcd.com which includes all blogs, pages and articles   </li>
+</ol>
+
+</div>
+<!-- /Content -->
+
+<!-- Side bar -->
+<div class="col s3" id="sidebar">
+<div class="divider"></div>
+<div class="section">
+<h5 class="">分类</h5>
+<ul class="nav nav-pills nav-stacked">
+  <li ><a href="../category/chan-zhong-shuo-shan.html">缠中说禅</a></li>
+  <li ><a href="../category/li-ge-shuo-li-cai.html">力哥说理财</a></li>
+</ul>
+</div>
+
+
+
+</div>
+<!-- /Side bar -->
+
+</div>
+<!-- /Main block -->
+</div>
+<!-- Footer -->
+<div class="divider"></div>
+
+<footer class="page-footer">
+<div class="footer-copyright">
+        <div class="container">
+        软件持续集成和持续发布 QQ群：172758282，437085002. &nbsp&nbsp&nbsp   © 2014-2015 Materialize, All rights reserved.
+        <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
+        </div>
+      </div>
+</footer>
+
+<!-- /Footer -->
+
+</div></div>
+<!-- /Body -->
+
+
+
+
+
+</body>
+</html>

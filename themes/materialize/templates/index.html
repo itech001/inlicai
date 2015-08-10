@@ -16,25 +16,23 @@
 
 {% block content %}
 {% if articles %}
-
   {% for article in articles_page.object_list %}
     {% if loop.first and not articles_page.has_previous() %}
       <article>
       <h5><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h5>
-
-      {{ article.content }}
-
+      {{ article.summary }}
+      {% if article.content|length > article.summary|length %}
+        <p><a class="waves-effect waves-light btn" href="{{ SITEURL }}/{{ article.url }}">更多原文</a></p>
+      {% endif %}
       <p class="info">
       {% include 'block_article_info.html' %}
       </p>
-
       {% if DISQUS_SITENAME %}
         <aside id="comment-count"><p>
         {% include 'block_disqus_count.html' %}
         </p></aside>
       {% endif %}
       </article>
-
       {% if DEFAULT_PAGINATION and loop.length == 1 and articles_page.has_next() %}
         <nav >
           {% include 'block_pagination.html' %}
@@ -44,28 +42,22 @@
     {% else %}
       <article>
       <h5><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h5>
-
       {{ article.summary }}
-
       {% if article.content|length > article.summary|length %}
         <p><a class="waves-effect waves-light btn" href="{{ SITEURL }}/{{ article.url }}">更多原文</a></p>
       {% endif %}
-
       <p class="info">
       {% include 'block_article_info.html' %}
       </p>
-
       {% if DISQUS_SITENAME %}
         <aside id="comment-count"><p>
         {% include 'block_disqus_count.html' %}
         </p></aside>
       {% endif %}
       </article>
-
       {% if DEFAULT_PAGINATION and loop.last and (articles_page.has_previous() or articles_page.has_next()) %}
           {% include 'block_pagination.html' %}
       {% endif %}
-
     {% endif %}
   {% endfor %}
 

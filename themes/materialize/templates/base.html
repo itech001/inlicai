@@ -9,19 +9,14 @@
   <link href="{{ SITEURL }}/theme/materialize/css/materialize.css" rel="stylesheet" type="text/css"/>
   <link href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" rel="stylesheet" type="text/css"/>
   <link href="{{ SITEURL }}/theme/css/pygment.css" rel="stylesheet" type="text/css"/>
+<script src="{{ SITEURL }}/theme/js/jquery.js"></script>
+<script src="{{ SITEURL }}/theme/materialize/js/materialize.js"></script>
 
-<script src="{{ SITEURL }}/theme/tipuesearch/tipuesearch_content.js"></script>
-<link href="{{ SITEURL }}/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-<script src="{{ SITEURL }}/theme/tipuesearch/tipuesearch_set.js"></script>
-<script src="{{ SITEURL }}/theme/tipuesearch/tipuesearch.min.js"></script>
   {% if FEED_RSS %}<link href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate" type="application/atom+xml" title="{{ SITENAME }} RSS" />
   {% endif %}
 <script>
 $(document).ready(function() {
-     $('#tipue_search_input').tipuesearch({
-          'mode': 'json',
-          'contentLocation': 'tipuesearch_content.json'
-     });
+     $('#sidebar .section').pushpin({ top: $('#sidebar .section').offset().top });
 });
 </script>
 
@@ -108,10 +103,10 @@ bootstrap-itech - a Pelican theme using Bootstrap
 <!-- /Content -->
 
 <!-- Side bar -->
-<div class="col s3">
+<div class="col s3" id="sidebar">
 <div class="divider"></div>
 <div class="section">
-<h5 class="red lighten-2">分类</h5>
+<h5 class="">分类</h5>
 <ul class="nav nav-pills nav-stacked">
 {% for cat, null in categories %}
   <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
@@ -119,21 +114,11 @@ bootstrap-itech - a Pelican theme using Bootstrap
 </ul>
 </div>
 
-<div class="divider"></div>
-<div class="section">
-<h5 class="red lighten-2">标签</h5>
-<ul class="tagcloud">
-    {% for tag in tag_cloud %}
-        <li class="tag-{{ tag.1 }}"><a href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a></li>
-    {% endfor %}
-</ul>
-</div>
-
   {% if DISPLAY_LINKS_ON_MENU != False %}
 <div class="divider"></div>
 <div class="section">
 {% if LINKS %}
-<h5 class="red lighten-2">链接</h5>
+<h5 class="">链接</h5>
 <ul class="nav nav-pills nav-stacked">
 {% for name, link in LINKS %}
   <li><a href="{{ link }}">{{ name }}</a></li>
@@ -147,7 +132,7 @@ bootstrap-itech - a Pelican theme using Bootstrap
 <div class="divider"></div>
 <div class="section">
 {% if SOCIAL %}
-<h5 class="red lighten-2">联系</h5>
+<h5 class="">联系</h5>
 <ul class="nav nav-pills nav-stacked">
   {% if FEED_ATOM %}
   <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate">Site Feed{% if FEED_RSS or not FEED_DOMAIN %} (Atom){% endif %}</a></li>
@@ -186,8 +171,8 @@ bootstrap-itech - a Pelican theme using Bootstrap
 </div></div>
 <!-- /Body -->
 
-<script src="{{ SITEURL }}/theme/js/jquery.js"></script>
-<script src="{{ SITEURL }}/theme/materialize/js/materialize.js"></script>
+
+
 
 {% if GOOGLE_ANALYTICS %}
   {% include 'block_google_analytics.html' %}
