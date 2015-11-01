@@ -41,6 +41,6 @@ box-shadow: rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 3px 
   color: #fff;
 }
 
-.btn:hover, .btn-large:hover {
+.btn, .btn:hover, .btn-large:hover {
 background-color: #ee6e73;
 }
